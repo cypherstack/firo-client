@@ -37,6 +37,10 @@ jobs:
         python-version: '3.x'
       # Note: Python 3.x should include distutils by default
 
+    - name: Link libsodium (macOS)
+      if: runner.os == 'macOS'
+      run: brew link libsodium --force
+
     - name: Install dependencies
       run: npm ci
 
